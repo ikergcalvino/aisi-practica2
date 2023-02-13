@@ -1,0 +1,20 @@
+services:
+  redis:
+    image: localhost:5000/XXX
+
+  webapp:
+    image: localhost:5000/XXX
+    volumes:
+        - type: XXX
+          source: XXX
+          target: XXX
+    ports:
+        - "80:5000"
+    healthcheck:
+        test: ["CMD", "curl", "--fail", "http://127.0.0.1:5000"]
+        interval: 15s
+    depends_on:
+      - "redis"     
+    deploy:
+      mode: XXX
+      replicas: XXX

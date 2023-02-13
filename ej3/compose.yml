@@ -1,0 +1,19 @@
+services:
+  XXX:
+    image: XXX
+
+  XXX:
+    image: XXX
+    volumes:
+        - type: XXX
+          source: XXX
+          target: XXX
+    ports:
+        - "XXX:XXX"
+    links:
+        - "XXX"
+    healthcheck:
+        test: ["CMD", "curl", "--fail", "XXX"]
+        interval: XXX
+    depends_on:
+      - "XXX"
