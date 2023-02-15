@@ -10,9 +10,9 @@ class VagrantPlugins::ProviderVirtualBox::Action::Network
   end
 end
 
-BOX_NAME = "xxx-aisi2223/focal64"
-MANAGER_HOSTNAME = "xxx-aisi2223-docker"
-WORKER_HOSTNAME = "xxx-aisi2223-docker-worker"
+BOX_NAME = "idc-aisi2223/focal64"
+MANAGER_HOSTNAME = "idc-aisi2223-docker"
+WORKER_HOSTNAME = "idc-aisi2223-docker-worker"
 
 Vagrant.configure("2") do |config|
   config.vm.box = BOX_NAME
