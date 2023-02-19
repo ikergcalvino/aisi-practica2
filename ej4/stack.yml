@@ -1,13 +1,13 @@
 services:
   redis:
-    image: localhost:5000/XXX
+    image: localhost:5000/idc-aisi2223-redis
 
   webapp:
-    image: localhost:5000/XXX
+    image: localhost:5000/idc-aisi2223-webcounter
     volumes:
-        - type: XXX
-          source: XXX
-          target: XXX
+        - type: bind
+          source: ej2/src/counter.py
+          target: /src
     ports:
         - "80:5000"
     healthcheck:
@@ -16,5 +16,5 @@ services:
     depends_on:
       - "redis"     
     deploy:
-      mode: XXX
-      replicas: XXX
+      mode: replicated
+      replicas: 3
