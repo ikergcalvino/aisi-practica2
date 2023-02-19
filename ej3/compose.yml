@@ -1,19 +1,19 @@
 services:
-  XXX:
-    image: XXX
+  redis:
+    image: idc-aisi2223-redis
 
-  XXX:
-    image: XXX
+  webapp:
+    image: idc-aisi2223-webcounter
     volumes:
-        - type: XXX
-          source: XXX
-          target: XXX
+        - type: bind
+          source: ej2/src/counter.py
+          target: /src
     ports:
-        - "XXX:XXX"
+        - "80:5000"
     links:
-        - "XXX"
+        - "redis-server"
     healthcheck:
-        test: ["CMD", "curl", "--fail", "XXX"]
-        interval: XXX
+        test: ["CMD", "curl", "--fail", "http://127.0.0.1:5000"]
+        interval: 15s
     depends_on:
-      - "XXX"
+      - "redis"
