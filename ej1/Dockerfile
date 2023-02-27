@@ -14,4 +14,4 @@ RUN mkdir $REDIS_DATA && chown redis:redis $REDIS_DATA
 WORKDIR	$REDIS_DATA
 USER redis
 EXPOSE 6379/tcp
-ENTRYPOINT exec: redis-server --protected-mode no
+ENTRYPOINT ["redis-server" , "--protected-mode no"]
