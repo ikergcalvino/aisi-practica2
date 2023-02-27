@@ -34,7 +34,7 @@ Vagrant.configure("2") do |config|
         prov.name = "AISI-P2-#{manager.vm.hostname}"
         prov.cpus = 1
         prov.memory = 1024
-	prov.gui = false
+      	prov.gui = false
     end
   end
   
@@ -45,10 +45,10 @@ Vagrant.configure("2") do |config|
     worker.vm.network "forwarded_port", guest: 80, host: 9090
             
     worker.vm.provider "virtualbox" do |prov|
-	prov.name = "AISI-P2-#{worker.vm.hostname}"
+      	prov.name = "AISI-P2-#{worker.vm.hostname}"
         prov.cpus = 1
         prov.memory = 1024
-	prov.gui = false
+      	prov.gui = false
     end
   end
 
