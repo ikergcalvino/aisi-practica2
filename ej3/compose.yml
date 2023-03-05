@@ -1,5 +1,5 @@
 services:
-  redis-server:
+  redis:
     image: idc-aisi2223-redis
 
   webapp:
@@ -11,9 +11,9 @@ services:
     ports:
         - "80:5000"
     links:
-        - "redis-server"
+        - "redis:redis-server"
     healthcheck:
         test: ["CMD", "curl", "--fail", "http://127.0.0.1:5000"]
         interval: 15s
     depends_on:
-      - "redis-server"
+      - "redis"
