@@ -6,7 +6,7 @@ services:
     image: localhost:5000/idc-aisi2223-webcounter
     volumes:
         - type: bind
-          source: src/
+          source: /vagrant/ej3/src
           target: /src
     ports:
         - "80:5000"
