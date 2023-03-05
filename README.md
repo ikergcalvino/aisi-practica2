@@ -24,9 +24,11 @@
 
 ## Ejercicio 4
 
-![Comprobaciones del stack](/img/)
+![Comprobaciones del stack - manager](/img/captura6-1.png)
 
-![Escalada del servicio](/img/)
+![Comprobaciones del stack - worker](/img/captura6-2.png)
+
+![Escalada del servicio](/img/captura7.png)
 
 ## Ejercicio 5
 
