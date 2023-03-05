@@ -10,8 +10,8 @@ services:
           target: /src
     ports:
         - "80:5000"
-    links:
-        - "redis:redis-server"
+    #links:
+    #    - "redis:redis-server"
     healthcheck:
         test: ["CMD", "curl", "--fail", "http://127.0.0.1:5000"]
         interval: 15s
