@@ -28,7 +28,7 @@ Vagrant.configure("2") do |config|
     manager.vm.hostname = MANAGER_HOSTNAME
     manager.vm.network "private_network", ip: "10.10.1.10", virtualbox__intnet: true
     manager.vm.network "forwarded_port", guest: 80, host: 8080
-    # manager.vm.provision "shell", path: "provisioning/install-docker-compose-ubuntu.sh"
+    manager.vm.provision "shell", path: "provisioning/install-docker-compose-ubuntu.sh"
 
     manager.vm.provider "virtualbox" do |prov|
         prov.name = "AISI-P2-#{manager.vm.hostname}"
