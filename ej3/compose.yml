@@ -1,12 +1,12 @@
 services:
-  redis:
+  redis-server:
     image: idc-aisi2223-redis
 
   webapp:
     image: idc-aisi2223-webcounter
     volumes:
         - type: bind
-          source: ej2/src/counter.py
+          source: src/
           target: /src
     ports:
         - "80:5000"
@@ -16,4 +16,4 @@ services:
         test: ["CMD", "curl", "--fail", "http://127.0.0.1:5000"]
         interval: 15s
     depends_on:
-      - "redis"
+      - "redis-server"
